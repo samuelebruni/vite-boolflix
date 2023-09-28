@@ -1,0 +1,16 @@
+@use '../../../node_modules/bootstrap/scss/bootstrap.scss';
+/* npm i --save bootstrap @popperjs/core => prima devo installare bs da terminale */
+
+/* per importare scss @use ' percorso scss(non serve mettere .scss) ' + as + *  (asterisco intende tutto) + ; */
+/* variabili */
+
+
+body {
+    background-color: black;
+    color: white;
+}
+
+.card {
+    height: 350px;
+    margin-bottom: 2rem;
+}
