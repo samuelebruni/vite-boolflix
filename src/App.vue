@@ -40,7 +40,11 @@ export default {
             <p class="card-text">{{ movie.original_title }}</p>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Language: {{ movie.original_language }}</li>
+            <li class="list-group-item">Language: {{ movie.original_language }}
+              <img width="100" :alt="movie.original_language"
+                :src="movie.original_language === 'en' ? store.flagEnglishUrl : 'https://flagsapi.com/' + movie.original_language.toUpperCase() + '/shiny/64.png'" />
+            </li>
+
             <li class="list-group-item">Vote: {{ movie.vote_average }}</li>
           </ul>
         </div>
@@ -49,11 +53,14 @@ export default {
       <div class=" col-xl-2 col-md-3 col-sm-6 col-12" v-for="serie in store.seriesList">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">{{ serie.name }}</h5>
+            <h5 class="card-title">{{ serie.name }} CIAO</h5>
             <p class="card-text">{{ serie.original_name }}</p>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Language: {{ serie.original_language }}</li>
+            <li class="list-group-item">Language: {{ serie.original_language }}
+              <img width="100" :alt="serie.original_language"
+                :src="serie.original_language === 'en' ? store.flagEnglishUrl : 'https://flagsapi.com/' + serie.original_language.toUpperCase() + '/shiny/64.png'" />
+            </li>
             <li class="list-group-item">Vote: {{ serie.vote_average }}</li>
           </ul>
         </div>

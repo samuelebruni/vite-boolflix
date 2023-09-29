@@ -8,7 +8,7 @@ export const store = reactive({
     movieList: null,
     seriesList: null,
     queryValue: '',
-
+    flagEnglishUrl: 'https://flagsapi.com/GB/shiny/64.png',
     fetchMovie() {
         axios
             .get(this.movieUrl + `&query=${this.queryValue}`)
