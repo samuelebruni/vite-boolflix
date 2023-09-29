@@ -45,6 +45,20 @@ export default {
           </ul>
         </div>
       </div>
+
+      <div class=" col-xl-2 col-md-3 col-sm-6 col-12" v-for="serie in store.seriesList">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ serie.name }}</h5>
+            <p class="card-text">{{ serie.original_name }}</p>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">Language: {{ serie.original_language }}</li>
+            <li class="list-group-item">Vote: {{ serie.vote_average }}</li>
+          </ul>
+        </div>
+      </div>
+
     </div>
   </div>
 </template>
