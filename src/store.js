@@ -8,13 +8,17 @@ export const store = reactive({
     movieList: null,
     seriesList: null,
     queryValue: '',
+    urlImg: 'https://image.tmdb.org/t/p/w342',
+
+
     flagEnglishUrl: 'https://flagsapi.com/GB/shiny/64.png',
     fetchMovie() {
         axios
             .get(this.movieUrl + `&query=${this.queryValue}`)
             .then(response => {
                 this.movieList = response.data.results;
-                this.queryValue = ' '
+                this.queryValue = ' ',
+                    console.log(this.movieList);
             })
             .catch(error => {
                 console.error(error);
