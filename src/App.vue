@@ -14,6 +14,7 @@ export default {
       store,
     }
   },
+
   methods() {
     store.fetchMovie();
   }
@@ -22,7 +23,8 @@ export default {
 
 <template>
   <AppHeader />
+
   <AppItem />
 </template>
 
-<style scoped></style>
+

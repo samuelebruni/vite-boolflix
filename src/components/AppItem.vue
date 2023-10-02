@@ -15,22 +15,22 @@ export default {
     <div class="mycontainer">
         <div class="row">
             <div class="col-3 mb-3" v-for="movie in store.movieList">
-                <div class="position-relative d-flex align-items-center justify-content-center mywidth">
-                    <img class="myimg" :src="store.urlImg + movie.poster_path" alt="">
-                    <div class="myposition position-absolute w-1 d-flex flex-column mod">
-                        <h6 class="card-title d-inline-">{{ movie.title }}</h6>
-                        <span class="card-text d-inline-block">
+                <div class="position-relative d-flex align-items-center justify-content-center mywidth myimg">
+                    <img :src="store.urlImg + movie.poster_path" alt="">
+                    <div class="myposition position-absolute w-1 d-flex flex-column bg-black p-1">
+                        <h6 class="card-title mod">TITOLO: {{ movie.title }}</h6>
+                        <span class="card-text mod">
                             {{ movie.original_title }}
                         </span>
-                        <span class="list-group-item">
-                            Language: {{ movie.original_language.toUpperCase() }}
+                        <span class="list-group-item mod">
+                            LINGUA: {{ movie.original_language.toUpperCase() }}
                             <img width="20" :alt="movie.original_language"
                                 :src="movie.original_language === 'en' ? store.flagEnglishUrl : 'https://flagsapi.com/' + movie.original_language.toUpperCase() + '/shiny/64.png'" />
                         </span>
                         <div class="d-flex align-items-center gap-1">
-                            <span class="pt-1">VOTO: {{ Math.round(movie.vote_average / 2) }}</span>
+                            <span class="pt-1 mod">VOTO: {{ Math.round(movie.vote_average / 2) }}</span>
 
-                            <span v-for="star in Math.round(movie.vote_average / 2)">
+                            <span class="mod" v-for="star in Math.round(movie.vote_average / 2)">
 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-star-fill" viewBox="0 0 16 16">
@@ -40,7 +40,7 @@ export default {
 
                             </span>
 
-                            <span v-for="noStar in (5 - Math.round(movie.vote_average / 2))">
+                            <span class="mod" v-for="noStar in (5 - Math.round(movie.vote_average / 2))">
 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                     class="bi bi-star" viewBox="0 0 16 16">
@@ -57,7 +57,7 @@ export default {
         </div>
     </div>
 </template>
-<style scoped>
+<style scoped lang="scss">
 .mycontainer {
     width: 90%;
     margin: auto;
@@ -76,9 +76,12 @@ export default {
     display: none;
 }
 
-img:hover {
-    cursor: pointer;
-    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Black_colour.jpg/800px-Black_colour.jpg);
+.myimg:hover {
+    .mod {
+        display: block
+    }
 
+    cursor: pointer;
+    display: none
 }
 </style>

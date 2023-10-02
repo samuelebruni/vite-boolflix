@@ -9,9 +9,10 @@ export const store = reactive({
     seriesList: null,
     queryValue: '',
     urlImg: 'https://image.tmdb.org/t/p/w342',
-
-
+    mainUrlMovie: 'https://api.themoviedb.org/3/search/movie?api_key=d2e343f40db5cc47c894e35c633ad6b7&num=4&offset=0&query=star+wars',
     flagEnglishUrl: 'https://flagsapi.com/GB/shiny/64.png',
+    mainMovieList: null,
+
     fetchMovie() {
         axios
             .get(this.movieUrl + `&query=${this.queryValue}`)
